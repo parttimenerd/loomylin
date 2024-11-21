@@ -13,8 +13,6 @@ const val DELAY: Long = 100
 val executor: ScheduledExecutorService = Executors.newSingleThreadScheduledExecutor()
 
 fun main() {
-    createServer(QueuedThreadPool(4, 4)).start(7000) // start a server with a thread pool equal to number of physical cores
-    createServer(QueuedThreadPool(32, 32)).start(7001) // start a server with wanted concurrency
     createServer(LoomThreadPoolKt()).start(7002) // start a loom server
 }
 

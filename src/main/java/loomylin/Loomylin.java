@@ -18,9 +18,7 @@ public class Loomylin {
     static ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
     public static void main(String[] args) {
-        createServer(new QueuedThreadPool(4, 4)).start(7000); // start a server with a thread pool equal to number of physical cores
-        createServer(new QueuedThreadPool(32, 32)).start(7001); // start a server with wanted concurrency
-        createServer(new LoomThreadPool()).start(7002); // start a loom server
+         createServer(new LoomThreadPool()).start(7002); // start a loom server
     }
 
     private static Javalin createServer(ThreadPool threadPool) {

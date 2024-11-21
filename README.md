@@ -1,3 +1,17 @@
+# Java Loom Stress Test
+
+This is a fork of the [loomylin](https://https://github.com/tipsy/loomylin) project for the purpose of stress
+testing the JVM.
+
+Simple workflow:
+
+```shell
+mvn package
+hey -n 100000 -c 1000 -m GET http://localhost:7002/wait-blocking
+```
+
+*You need to install [hey](https://github.com/rakyll/hey) first.*
+
 # loomylin
 
 ![Banner](gfx/banner.png?raw=true)
